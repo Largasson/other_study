@@ -1,4 +1,12 @@
-numbers = (-2, -1, 0, 1, 2)
+import re
+import sys
 
-non_zero = filter(None, numbers)
-print(*non_zero)
+regex = r'""".*?"""'
+regex2 = r'\n?#.*'
+
+text = ''
+for line in sys.stdin:
+    text+=line
+result1 = re.sub(regex, '', text, flags=re.DOTALL).strip()
+result2 = re.sub(regex2, '', result1)
+print(result2)
