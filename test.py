@@ -1,9 +1,6 @@
-import re
+from itertools import product
 
-a, b = map(int, input().split())
-string = input()
-regex_obj = re.compile(r'\d+')
-result = regex_obj.findall(string, pos=a, endpos=b)
-print(sum(map(int, result)) if result else 0)
+yo = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
 
-# но я же тут вносил изменения
+for i in product(yo[:int(input())], repeat=int(input())):
+    print(''.join(i), end=' ')
