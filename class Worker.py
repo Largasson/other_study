@@ -1,10 +1,10 @@
 class Worker:
     def __init__(self, name, surname, age, salary, position='worker'):
-        self.salary = salary
-        self.name = name
-        self.surname = surname
-        self.age = age
-        self.position = position
+        self._salary = salary
+        self._name = name
+        self._surname = surname
+        self._age = age
+        self._position = position
 
     def get_name(self):
         return self._name
@@ -75,7 +75,4 @@ print(Alex.age)
 print(Alex.position)
 print(Alex.salary)
 print(Alex.info)
-try:
-    Alex.age = 'e'
-except ValueError as e:
-    print(f'Ошибка ввода данных! {e}')
+print(Alex.__dict__)
