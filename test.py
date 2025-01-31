@@ -1,6 +1,9 @@
-from itertools import product
+n = int(input())
+lst = [[0 for i in range(n)] for _ in range(n)]
 
-yo = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+for i in range(len(lst)):
+    for j in range(len(lst[i])):
+        lst[i][j] = min(i, j, n - i - 1, n - j - 1) + 1
 
-for i in product(yo[:int(input())], repeat=int(input())):
-    print(''.join(i), end=' ')
+for row in range(len(lst)):
+    print(' '.join(map(str, lst[row])))
