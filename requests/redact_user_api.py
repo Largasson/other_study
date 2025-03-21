@@ -3,7 +3,7 @@ import requests
 base_url = "https://api.pachca.com/api/shared/v1/users"
 
 headers = {
-    "Authorization": "Bearer F79E6kLjBzyeeB4otztqtQkOtlqU7dFbHiakD24mJlc",
+    "Authorization": "Bearer ",
     "Content-Type": "application/json; charset=utf-8",
     "Host": "api.pachca.com",
     "User-Agent": "Python-requests/2.x",

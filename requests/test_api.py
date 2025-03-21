@@ -4,7 +4,7 @@ import json
 # URL и заголовок авторизации
 url = "https://api.pachca.com/api/shared/v1/users"
 headers = {
-    "Authorization": "Bearer F79E6kLjBzyeeB4otztqtQkOtlqU7dFbHiakD24mJlc",
+    "Authorization": "Bearer F79E6kLjBzyeeB4otztqtQkOtlqU7dF",
     "Content-Type": "application/json; charset=utf-8",
     "User-Agent": "Paw/3.1.10 (Macintosh; OS X/10.15.3) GCDHTTPRequest",
     "Connection": "close",
