@@ -1,5 +1,5 @@
-import sys
+non_zero = filter(None, [-2, -1, 0, 1, 2])
+positive = map(abs, non_zero)
 
-lst = [s for s in sys.stdin]
-res = len(lst) - len(set(lst))
-print(res)
+print(list(non_zero))
+print(list(positive))
