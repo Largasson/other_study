@@ -1,11 +1,20 @@
-class Point():
-    def __init__(self, x, y, z):
-        self.x = x
-        self.y = y
-        self.z = z
-        self.xyz = (x, y, z)
-    def __repr__(self):
-        return f"Point({self.x}, {self.y}, {self.z})"
+class ContextManager:
+    def __init__(self):
+        self.inside = False
 
-    def __iter__(self):
-        yield from self.xyz
+    def __enter__(self):
+        self.inside = True
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.inside = False
+        return True
+
+
+context = ContextManager()
+print(context.inside)
+
+with context:
+    print(context.inside)
+
+print(context.inside)
