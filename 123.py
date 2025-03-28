@@ -1,20 +1,11 @@
-class ContextManager:
-    def __init__(self):
-        self.inside = False
+from contextlib import ExitStack
 
-    def __enter__(self):
-        self.inside = True
-        return self
+def print_this(*args):
+    print(*args)
 
-    def __exit__(self, exc_type, exc_value, traceback):
-        self.inside = False
-        return True
-
-
-context = ContextManager()
-print(context.inside)
-
-with context:
-    print(context.inside)
-
-print(context.inside)
+with ExitStack() as stack:
+    stack.callback(print_this, 'bee')
+    stack.callback(print_this, 'bee', 'geek')
+    stack.close()
+    stack.callback(print_this, 'b', 'e', 'e')
+    stack.close()
