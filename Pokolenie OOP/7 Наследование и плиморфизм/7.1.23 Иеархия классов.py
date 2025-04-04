@@ -24,6 +24,3 @@ class Propeller(AirVehicle):
 
 class Jet(AirVehicle):
     pass
-
-
-
