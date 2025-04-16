@@ -1,13 +1,13 @@
-from collections import UserDict
+from collections.abc import Sequence
 
-class LowerCaseDict(UserDict):
-    def __setitem__(self, key, value):
-        key = str(key).lower()
-        super().__setitem__(key, value)
+class TypeSequence(Sequence):
+    def __init__(self, values):
+        self.values = values
+    def __getitem__(self, index):
+        value = self.values[index]
+        return value, type(value)
 
 
-lowercasedict  = LowerCaseDict({'ONE': 1})
-lowercasedict['TWO'] = 2
-lowercasedict.update({'THREE': 3})
+data = TypeSequence([10, False, 'beegeek', 3.14])
 
-print(lowercasedict)
+print(data[1])
