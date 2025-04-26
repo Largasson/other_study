@@ -1,13 +1,20 @@
-from collections import UserDict
+class Animal:
+    def sound(self):
+        pass
 
-class LowerCaseDict(UserDict):
-    def __setitem__(self, key, value):
-        key = str(key).lower()
-        super().__setitem__(key, value)
+class Cat(Animal):
+    def sound(self):
+        return 'мяу'
+
+class Dog(Animal):
+    def sound(self):
+        return 'гав'
+
+class CatDog(Cat, Dog):
+    def sound(self):
+        return super().sound()
 
 
-lowercasedict  = LowerCaseDict({'ONE': 1})
-lowercasedict['TWO'] = 2
-lowercasedict.update({'THREE': 3})
+catdog = CatDog()
 
-print(lowercasedict)
+print(catdog.sound())
